@@ -19,7 +19,7 @@ pi for this, that's all.
 
 #### Build The Circuit
 
-[image]
+![Alt Text](./images/button1.png?raw=true)
 
 1. Using two jumper cables, connect the positive 'bar' to GPIO26 (#37), then the negative bar to GND (#39).
 2. Place a button onto the breadboard, with the top left corner in cell E10.
