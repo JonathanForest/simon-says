@@ -118,7 +118,44 @@ you see one line each time the button is pressed?
 
 ## Task 2 - Getting an LED to blink.
 
+0. Setup the breadboard.
 
+1. Add the setup code.
+
+Just like before, there is code we need to add that we don't *really* need to know about.
+Copy and paste the below into a new file called 'simple_flashing_led.py':
+
+```python3
+
+import RPi.GPIO as GPIO 
+...
+
+GPIO.setwarnings(False) 
+GPIO.setmode(GPIO.BOARD) 
+GPIO.setup(8, GPIO.OUT, initial=GPIO.LOW) 
+```
+
+The first thing we have to do is import the sleep function from the module 'time'.
+Can you see that ... in the above code? Try and replace that with Python code that
+imports 'sleep' from the module 'time'. (if you want to google it, try googling 'how to import sleep
+from time python'.
+
+
+2. Add your code.
+
+We need a while loop that will run forever, and then we need to change the 'state' of
+the GPIO pin. First to HIGH, then to LOW. Ideally, so we (humans) can see the flashing
+we need to add a delay between those two lines. Try and replace the last two ... with a call of the
+sleep function, getting it to delay by one second.
+
+
+```python3
+... True: # Run forever
+    GPIO.output(8, GPIO.HIGH) # Turn on
+    ... # Sleep for 1 second
+    GPIO.output(8, GPIO.LOW) # Turn off
+    ... # Sleep for 1 second
+```
 
 
 ## Task 3 - Looping Through Multiple LEDs.
