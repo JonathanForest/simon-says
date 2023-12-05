@@ -1,9 +1,5 @@
 #  Introduction to Hardware Programming
 
-
-# Introduction
-
-
 ## Task 1 - Using a Button to print words to the console.
 
 ### Overview
@@ -37,6 +33,8 @@ First, we'll import the Python module that allows us to interact with the GPIO p
 lot of code here that we need, that you don't really need to understand yet. We'll just copy and
 paste this into the code editor.
 
+In a new file called 'simple_button_press.py', add the following code:
+
 ```python3
 import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
 
@@ -66,6 +64,56 @@ There's a template below, replace the ... with code that will make this work.
     ... GPIO.input(10) ... GPIO.HIGH:
         print("Button was pushed!")
 ```
+
+3. Make it Better!
+
+You may notice that you see 'Button was pushed!' appear on your screen quite a few times...
+This is because our code currently just checks if the button is pressed. Ideally, we want
+to check if it *has just been pressed*.
+
+We're going to modify the code to do that.
+
+In a new file called 'better_button_press.py' add the following code:
+
+```python3
+import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
+
+# Ignore warning for now
+GPIO.setwarnings(False) 
+
+# Use physical pin numbering
+GPIO.setmode(GPIO.BOARD)
+ 
+# Set pin 10 to be an input pin and set initial value to be pulled low (off)
+GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
+
+```
+
+This time though, we're going to create a function, then tell the raspberry pi to call that
+function each time the GPIO pin *changes state* (the fancy phrase for 'is pressed or not'.
+
+
+4. Create the Function
+
+Below is code that *should* take one argument called 'channel' and print 'Button was pushed!'
+when it is called. Can you replace the ... with the code needed to make this work?
+
+```python3
+... button_callback...channel...:
+    print("Button was pushed!")
+```
+
+5. Add the 'Callback'
+
+This line tells the raspberry pi to call the function 'button_callback' each time the button
+changes state.
+
+```python3
+GPIO.add_event_detect(10, GPIO.RISING, callback=button_callback)
+```
+
+Once you've added that into your code, run it and see what happens on the console. Do
+you see one line each time the button is pressed?
 
 
 ## Task 2 - Getting an LED to blink.
