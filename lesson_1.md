@@ -120,6 +120,8 @@ you see one line each time the button is pressed?
 
 0. Setup the breadboard.
 
+![Alt text](./images/led1.png?raw=true)
+
 1. Add the setup code.
 
 Just like before, there is code we need to add that we don't *really* need to know about.
