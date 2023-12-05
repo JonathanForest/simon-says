@@ -162,7 +162,10 @@ sleep function, getting it to delay by one second.
 
 ## Task 3 - Looping Through Multiple LEDs.
 
+If you've got this far in lesson 1, this means you can likely have a go at figuring this one out
+yourself...
 
+*... or wait for next week.*
 
 
 
