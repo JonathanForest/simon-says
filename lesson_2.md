@@ -125,21 +125,18 @@ Scroll back up to the top of your file (because module imports *should* go at th
 following line:
 
 ```python3
-# Below, complete the two lines of code:
 # Here, we want to import the time module
 import ...
 
 # Here, we want to import the random module. When we do it this was though, we are only
-# importing the randrange function.
-from ... import randrange
+# importing the function randint.
+from ... import randint 
 
 # Import Raspberry Pi GPIO library
 import RPi.GPIO as GPIO 
 
 # Ignore warnings for now, don't worry - all errors in your code will still show up...
 GPIO.setwarnings(False) 
-
-
 
 ```
 
@@ -151,12 +148,13 @@ modules we need, we can now start writing the code that does things!
 We've got to do the following things:
 
 1. Create a function that turns on the LED, waits half a second, then turns it off.
-2. Create a while loop that never ends.
-3. In that loop, generate a random number between 36 and 40 (and regenerate if it is equal to 39)
+2. Create a function that generates a random number between 36 and 40, but regenerates it if it
+   is equal to 39.
+3. Create a while loop that never ends.
 4. Call the function we created earlier, sending the randomly generated number as a
    parameter/argument.
 
-#### 1. Creating a Function
+### 1. Create the function that turns the LED on and Off
 
 This function needs to turn a GPIO pin on, then wait half a second, then turn the GPIO pin off.
 
@@ -166,7 +164,8 @@ argument...)
 ```python3
 
 # When creating a function, use this as a hint
-def new_function(put, arguments, here)
+def new_function(put, arguments, here):
+    # Code goes here.
 
 # Below create a new function called 'blink_light' that takes one argument.
 ... blink_light...:
@@ -179,33 +178,61 @@ def new_function(put, arguments, here)
 
 ```
 
-#### Creating a while loop.
+### 2. Create a function that generates a random number.
 
-Below that function we just defined, create a while loop that never ends. Inside the loop, print the
-words ("Hello World") and call the input function.
+Now we're going to generate a random number, using a while loop and an if statement. **We'll put this
+code into a function so that we can call it from elsewhere in the program.**
 
 ```python3
 
-while ...:
-    # print hello world
-    print(...)
+# Define a function below called 'get_random_pin_number'
+... get_random_pin_number...
     
-    # call the input function
+    # Here, let's set the variable pin to equal 'None'
+    ... = None
+
+    # Here' we're creating a while loop that runs until the random number generator generates a
+    # valid pin number
+    while True:
+    
+        pin = randint(36, 40)
+
+        # Below, add an if statement that checks if the value of pin is not equal to 39.
+        # If it is not equal to 39 'return' the variable 'pin'.
+        if ...:
+            return ...
+
+```
+
+
+### 3. Connecting it all together
+
+We now need to create a while loop, and call the functions above to make the LEDs flash in a random
+order.
+
+Let's create a while loop, and then call the two functions we defined above.
+
+```python3
+
+# Create a while loop that never ends
+... True:
+    
+    # Call the 'get_random_pin_number' function
     ...
-    
-```
 
-
-
-```python3
-
-
-
+    # Call the 'blink_light' function
+    ...
 
 ```
 
+Now if you run your code, you should see the lights turn on and off in a random order!
 
 
+
+
+## The End!
+
+If you have enough time (around 30 minutes left), 
 
 
 
