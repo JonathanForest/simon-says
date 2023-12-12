@@ -31,6 +31,9 @@ If the LEDs don't turn on, check the circuit. If don't see anything wrong, ask a
 # Import Raspberry Pi GPIO library
 import RPi.GPIO as GPIO 
 
+# Import the time module.
+import time
+
 # Ignore warnings for now, don't worry - all errors in your code will still show up...
 GPIO.setwarnings(False) 
 
@@ -55,11 +58,20 @@ print("GPIO Pins have been setup")
 def turn_on_an_led(pin):
     GPIO.output(pin, True)
 
+def turn_off_an_led(pin):
+    GPIO.output(pin, False)
+
 for led in [LED1, LED2, LED3, LED4]:
     print(f"Turning on GPIO pin {led}")
     turn_on_an_led(led)
 
 print("Lights should be turned on now.")
+
+time.sleep(10)
+
+for led in [LED1, LED2, LED3, LED4]:
+    print(f"Turning off GPIO pin {led}")
+    turn_off_an_led(led)
 ```
 
 ## Now the fun begins!
