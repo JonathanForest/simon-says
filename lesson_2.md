@@ -60,7 +60,6 @@ for led in [LED1, LED2, LED3, LED4]:
     turn_on_an_led(led)
 
 print("Lights should be turned on now.")
-
 ```
 
 ## Now the fun begins!
@@ -78,7 +77,6 @@ GPIO.setwarnings(False)
 
 # Use physical pin numbering instead of the technical numbering
 GPIO.setmode(GPIO.BOARD)
- 
 ```
 
 ### Setup the GPIO Pins
@@ -98,7 +96,6 @@ GPIO.setup(..., GPIO.OUT)
 GPIO.setup(..., GPIO.OUT)
 GPIO.setup(..., GPIO.OUT)
 GPIO.setup(..., GPIO.OUT)
-
 ```
 
 ### Creating a list that contains the Pin variables
@@ -112,7 +109,6 @@ Complete the following line of code and add it to the end of your program.
 ```python3
 
 led_list = ...
-
 ```
 
 ### Importing Other Peoples Code
@@ -137,7 +133,6 @@ import RPi.GPIO as GPIO
 
 # Ignore warnings for now, don't worry - all errors in your code will still show up...
 GPIO.setwarnings(False) 
-
 ```
 
 ### Creating the Loop that light's up the LEDs!
@@ -175,7 +170,6 @@ def new_function(put, arguments, here):
     GPIO.ouput(..., ...)
     time.sleep(...)
     GPIO...(..., ...)
-
 ```
 
 ### 2. Create a function that generates a random number.
@@ -216,7 +210,6 @@ Let's create a while loop, and then call the two functions we defined above.
     # Call the 'blink_light' function, sending the recently declared variable 'pin' as an
     # argument.
     ...
-
 ```
 
 Now if you run your code, you should see the lights turn on and off in a random order!
