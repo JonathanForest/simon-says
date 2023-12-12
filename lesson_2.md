@@ -65,7 +65,7 @@ print("Lights should be turned on now.")
 
 ## Now the fun begins!
 
-**Create a new file called 'lightshow.py'.
+**Create a new file called 'lightshow.py'.**
 
 Copy the following code:
 
