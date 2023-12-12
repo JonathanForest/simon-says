@@ -185,23 +185,15 @@ code into a function so that we can call it from elsewhere in the program.**
 
 ```python3
 
-# Define a function below called 'get_random_pin_number'
+# Define a function below called 'get_random_pin_number', it should have one argument called
+# 'leds'.
 ... get_random_pin_number...
     
-    # Here, let's set the variable pin to equal 'None'
-    ... = None
+    # The following code generates a random number between 0 and 3 (inclusive of 3!).
+    index = randint(0, 3)
 
-    # Here' we're creating a while loop that runs until the random number generator generates a
-    # valid pin number
-    while True:
-    
-        pin = randint(36, 40)
-
-        # Below, add an if statement that checks if the value of pin is not equal to 39.
-        # If it is not equal to 39 'return' the variable 'pin'.
-        if ...:
-            return ...
-
+    # Using 'list indexing', return the item at the index generated above.
+    return leds...
 ```
 
 
@@ -217,10 +209,12 @@ Let's create a while loop, and then call the two functions we defined above.
 # Create a while loop that never ends
 ... True:
     
-    # Call the 'get_random_pin_number' function
+    # Call the 'get_random_pin_number' function and save the result to a variable called 'pin'.
+    # Send the variable led_list as an argument.
     ...
 
-    # Call the 'blink_light' function
+    # Call the 'blink_light' function, sending the recently declared variable 'pin' as an
+    # argument.
     ...
 
 ```
