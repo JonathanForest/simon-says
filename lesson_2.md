@@ -158,7 +158,7 @@ We've got to do the following things:
 2. Create a function that generates a random number between 36 and 40, but regenerates it if it
    is equal to 39.
 3. Create a while loop that never ends.
-4. Call the function we created earlier, sending the randomly generated number as a
+4. Call the functions we created earlier, sending the randomly generated number as a
    parameter/argument.
 
 ### 1. Create the function that turns the LED on and Off
@@ -192,14 +192,14 @@ code into a function so that we can call it from elsewhere in the program.**
 ```python3
 
 # Define a function below called 'get_random_pin_number', it should have one argument called
-# 'leds'.
+# 'pins'.
 ... get_random_pin_number...
     
     # The following code generates a random number between 0 and 3 (inclusive of 3!).
     index = randint(0, 3)
 
     # Using 'list indexing', return the item at the index generated above.
-    return leds...
+    return pins...
 ```
 
 
